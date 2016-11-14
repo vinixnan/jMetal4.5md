@@ -106,7 +106,7 @@ public class Spea2Fitness {
     // k = sqrt(population.size()), but a value of k = 1 recommended. See
     // http://www.tik.ee.ethz.ch/pisa/selectors/spea2/spea2_documentation.txt
     int k = 1 ;
-    for (int i = 0; i < distance.length; i++) {
+    for (int i = 0; i < distance.length && k < distance[i].length ; i++) {
       Arrays.sort(distance[i]);
       kDistance = 1.0 / (distance[i][k] + 2.0); // Calcule de D(i) distance
       //population.get(i).setFitness(rawFitness[i]);

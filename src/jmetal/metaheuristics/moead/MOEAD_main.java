@@ -112,7 +112,10 @@ public class MOEAD_main {
 			indicators = new QualityIndicator(problem, args[1]);
 		} // if
 		else { // Default problem
-			problem = new DTLZ1("Real");
+			//problem = new WFG1("Real");
+                        problem=new WFG1("Real", 4, 20, 3);
+                        String pf = "pareto_fronts/" + problem.getName() + "." + problem.getNumberOfObjectives() + "D.pf";
+                        indicators = new QualityIndicator(problem, pf);
 		} // else
 
 		algorithm = new MOEADD(problem);
@@ -120,7 +123,7 @@ public class MOEAD_main {
 
 		// Algorithm parameters
 		algorithm.setInputParameter("populationSize", 91);
-		algorithm.setInputParameter("maxEvaluations", 91 * 400);
+		algorithm.setInputParameter("maxEvaluations", 91 * 6000);
 
 		algorithm.setInputParameter("dataDirectory", "weight");
 		
