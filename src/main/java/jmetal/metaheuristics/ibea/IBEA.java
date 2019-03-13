@@ -44,12 +44,12 @@ public class IBEA extends Algorithm{
    * Stores the value of the indicator between each pair of solutions into
    * the solution set
    */
-  private List<List<Double>> indicatorValues_;
+  protected List<List<Double>> indicatorValues_;
 
   /**
    *
    */
-  private double maxIndicatorValue_;
+  protected double maxIndicatorValue_;
   /**
   * Constructor.
   * Create a new IBEA instance
@@ -63,7 +63,7 @@ public class IBEA extends Algorithm{
    * calculates the hypervolume of that portion of the objective space that
    * is dominated by individual a but not by individual b
    */
-  double calcHypervolumeIndicator(Solution p_ind_a,
+  protected double calcHypervolumeIndicator(Solution p_ind_a,
                                   Solution p_ind_b,
                                   int d,
                                   double maximumValues [],
